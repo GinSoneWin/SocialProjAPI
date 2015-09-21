@@ -1,0 +1,30 @@
+<http-response>
+	<http-header>
+		<signature type="string" mode="encrypted in pbkdf2">Pbkdf2{(timestamp+phone+passwd+responseJsonString),headerSalt}
+		</signature>
+	</http-header>
+	<http-content type="json string" mode="transparent">
+		<timestamp type="string" mode="transparent" />
+		<secretData type="json string" mode="encrypted in aes">
+			<result type="string" mode="transparent">
+				<case value="0" info="success" />
+				<case value="-1" info="fail: info wrong" />
+			</result>
+			<userid>
+				<case value="userid generated from server" info="get userid if rigist success"/>
+				<case value="" info="get empty string (not null) if rigist fail"/>
+			</userid>
+			<token mode="transparent" type="String">
+				<case value="token generated from server" info="get token if rigist success" />
+				<case value="" info="get empty string (not null) if rigist fail "/>
+			</token>
+			<headerSalt mode="transparent" type="String"/>
+		</secretData>
+	</http-content>
+</http-response>
+
+
+
+
+
+

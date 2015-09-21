@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<http-request>
+<http-url>webappcontext/security/publicKeyPro</http-url>
+<http-header>null</http-header>
+<http-content>null</http-content>>
+</http-request>
+
+<http-response>
+<http>
+</http-response>
